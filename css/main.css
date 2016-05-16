@@ -14,13 +14,6 @@ body {
 	text-align: center;
 }
 
-.ciudad{
-	float: left;
-}
-
-.hora-ciudad{
-	float: right;
-}
 
 #otros{
 	margin-top: 21px;
@@ -30,7 +23,7 @@ body {
 	margin-top: 21px;
 }
 
-#hora-ciudad,#ciudad{
+.hora-ciudad,.ciudad{
 	font-size: 21px;
 }
 
@@ -40,4 +33,5 @@ body {
 
 #myModal{
 	color: black;
+	text-align: left;
 }
