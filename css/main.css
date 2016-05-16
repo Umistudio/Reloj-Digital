@@ -16,26 +16,28 @@ body {
 
 .ciudad{
 	float: left;
-	margin-left: 14px;
 }
 
 .hora-ciudad{
 	float: right;
-	margin-right: 14px;
 }
 
 #otros{
-	
+	margin-top: 21px;
 }
 
 #seleccionar{
 	margin-top: 21px;
-	border: none;
-	border-color:  #EE6E73;
-	background-color: #EE6E73;
-	padding: 6px 12px;
-	text-align: center;
-	border-radius: 4px;
-	color: white;
-	font-size: 16px;
+}
+
+#hora-ciudad,#ciudad{
+	font-size: 21px;
+}
+
+#hora{
+	margin-top: 21px;
+}
+
+#myModal{
+	color: black;
 }

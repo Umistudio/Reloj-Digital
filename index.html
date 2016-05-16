@@ -12,12 +12,55 @@
 			<p id="hora">18:27</p>
 			<span>Martes ,</span><span>16 de Mayo</span>
 			<div id="otros">
-				<p><span class="ciudad">México</span class="hora-ciudad"><span class="hora-ciudad">14:14</span></p><br>
-				<p><span class="ciudad">México</span class="hora-ciudad"><span class="hora-ciudad">14:14</span></p><br>
-				<p><span class="ciudad">México</span class="hora-ciudad"><span class="hora-ciudad">14:14</span></p><br>
+				<div class="row">
+					<div class="col-xs-6">
+						<span id="ciudad">México</span>
+					</div>
+					<div class="col-xs-6">
+						<span id="hora-ciudad">19:58</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<span id="ciudad">México</span>
+					</div>
+					<div class="col-xs-6">
+						<span id="hora-ciudad">19:58</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<span id="ciudad">México</span>
+					</div>
+					<div class="col-xs-6">
+						<span id="hora-ciudad">19:58</span>
+					</div>
+				</div>
 			</div>
-			<button href="#" id="seleccionar">Seleccionar</button>
+			<button id="seleccionar" class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">Seleccionar</button>
+			<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 		</div>
+		<script src="js/jquery-1.12.3.js"></script>
+		<script src="js/bootstrap.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
