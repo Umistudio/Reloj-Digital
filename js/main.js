@@ -27,8 +27,11 @@ function mostrarHora(){
  $("#hora").html(horas+":"+minutos+":"+segundos)
  $("#dia").html(semana[fecha.getDay()]+", ")
  $("#fecha").html(fecha.getDate()+" de "+meses[fecha.getMonth()])
-  
- //Hora Regiones
+ 
+	}
+
+function horaRegion(){
+	//Hora Regiones
 
  var regiones=[{region:"México DC",
 				diferencia:0},
@@ -37,23 +40,31 @@ function mostrarHora(){
 			   {region:"Washington DC",
 				diferencia:-1},
 			   {region:"Madrid",
-				diferencia:7}]
-	}
-
-function horaRegion(){
+				diferencia:7},
+			   {region:"Seúl",
+				diferencia:14},
+			   {region:"Toronto",
+				diferencia:1},
+			   {region:"Bogotá",
+				diferencia:0},
+			   {region:"Caracas",
+				diferencia:1}]
+				
 	var checked=this.checked
+	var index=parseInt(this.value)
 	if(checked){
-		index=parseInt(this.value)
 		hora=fecha.getHours()+regiones[index].diferencia
+ 		if(hora>=24)
+ 			hora=hora-24
+ 		if(hora<10)
+ 		hora="0"+hora
 		minutos=fecha.getMinutes()
-		$("#otros").append("<div class='row"+index+"'>
-					<div class='col-xs-6'>
-						<span class='ciudad'>"+regiones[index].region+"</span>
-					</div>
-					<div class='col-xs-6'>
-						<span class='hora-ciudad'>"+hora+":"+minutos+"</span>
-					</div>
-				</div>")
+		if(minutos<10)
+ 		minutos="0"+minutos
+		segundos=fecha.getSeconds()
+		if(segundos<10)
+ 		segundos="0"+segundos
+		$("#otros").append("<div class='row"+index+"'><div class='col-xs-6'><span class='ciudad'>"+regiones[index].region+"</span></div><div class='col-xs-6'><span class='hora-ciudad'>"+hora+":"+minutos+":"+segundos+"</span></div></div>")
 	}
 	else $(".row"+index).remove()
 }
