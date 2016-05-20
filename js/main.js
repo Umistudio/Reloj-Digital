@@ -1,8 +1,9 @@
-var fecha = new Date();
+
 $(function(){
 	mostrarHora();
 	setInterval(mostrarHora, 1000);
 	$(".region").on("click",horaRegion)
+
  })
 
 function mostrarHora(){
@@ -13,7 +14,7 @@ function mostrarHora(){
  			 'Jueves', 'Viernes', 'Sábado'];
  var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
  			 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-
+ var fecha = new Date();
  var segundos=fecha.getSeconds()
  	if(segundos<10)
  		segundos="0"+segundos
@@ -49,7 +50,7 @@ function horaRegion(){
 				diferencia:0},
 			   {region:"Caracas",
 				diferencia:1}]
-				
+	var fecha = new Date();
 	var checked=this.checked
 	var index=parseInt(this.value)
 	if(checked){
