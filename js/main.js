@@ -1,12 +1,16 @@
-
+var fecha = new Date();
 $(function(){
+	mostrarHora();
+	setInterval(mostrarHora, 1000);
+	$(".region").on("click",horaRegion)
+ })
 
-var mostrarHora=function(){
+function mostrarHora(){
 //Hora local 
- var fecha = new Date();
+ 
 
- var semana = ['Domingo', 'Lunes', 'Martes', 'Miercoles',
- 			 'Jueves', 'Viernes', 'Sabado'];
+ var semana = ['Domingo', 'Lunes', 'Martes', 'Miércoles',
+ 			 'Jueves', 'Viernes', 'Sábado'];
  var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
  			 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
@@ -34,11 +38,22 @@ var mostrarHora=function(){
 				diferencia:-1},
 			   {region:"Madrid",
 				diferencia:7}]
-
-	if($("#mexico-dc").checked)
-		$("#otros").html("hola")
 	}
 
-	mostrarHora();
-	var intervalo = setInterval(mostrarHora, 1000);
- })
+function horaRegion(){
+	var checked=this.checked
+	if(checked){
+		index=parseInt(this.value)
+		hora=fecha.getHours()+regiones[index].diferencia
+		minutos=fecha.getMinutes()
+		$("#otros").append("<div class='row"+index+"'>
+					<div class='col-xs-6'>
+						<span class='ciudad'>"+regiones[index].region+"</span>
+					</div>
+					<div class='col-xs-6'>
+						<span class='hora-ciudad'>"+hora+":"+minutos+"</span>
+					</div>
+				</div>")
+	}
+	else $(".row"+index).remove()
+}

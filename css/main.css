@@ -35,3 +35,7 @@ body {
 	color: black;
 	text-align: left;
 }
+
+.modal-body p{
+	text-align: left;
+}
